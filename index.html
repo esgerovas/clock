@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Clock</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="clock">
+		<div class="background"></div>
+		<div class="second"></div>
+		<div class="minute"></div>
+		<div class="hour"></div>
+		<div class="circle"></div>
+	</div>
+
+	<script type="text/javascript">
+		var second=document.getElementsByClassName("second")[0];
+		var minute=document.getElementsByClassName("minute")[0];
+		var hour=document.getElementsByClassName("hour")[0];
+		/*var d = new Date();
+		ms=d.getMilliseconds();
+		s=d.getSeconds();
+		m=d.getMinutes();
+		h=d.getHours();
+		x=h%12;
+
+		second.style.webkitTransform = "rotate(" + (6*s+ms*6/1000) + "deg)";
+		minute.style.webkitTransform = "rotate(" + (6*m+s/10) + "deg)";
+		hour.style.webkitTransform = "rotate(" + (30*x+m/2) + "deg)";*/
+
+		function clock(){
+			var d = new Date();
+			ms=d.getMilliseconds();
+			s=d.getSeconds();
+			m=d.getMinutes();
+			h=d.getHours();
+			x=h%12;
+			second.style.webkitTransform = "rotate(" + (6*s+ms*6/1000) + "deg)";
+			minute.style.webkitTransform = "rotate(" + (6*m+s/10) + "deg)";
+			hour.style.webkitTransform = "rotate(" + (30*x+m/2) +"deg)";
+
+		}
+
+		setInterval(clock);
+
+	</script>
+</body>
+</html>
